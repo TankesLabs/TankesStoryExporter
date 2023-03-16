@@ -1,0 +1,33 @@
+apiVersion: core.tankes.story/v1alpha1
+kind: TankesSqlMetric
+metadata:
+  labels:
+    app.kubernetes.io/name: tankessqlmetric
+    app.kubernetes.io/instance: tankessqlmetric-sample
+    app.kubernetes.io/part-of: tankes-exporter
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: tankes-exporter
+  name: tankessqlmetric-sample-2
+spec:
+  name: character_exp
+  query: select name, exp from characters
+  valueField: exp
+  labelFields:
+    - name
+---
+apiVersion: core.tankes.story/v1alpha1
+kind: TankesSqlMetric
+metadata:
+  labels:
+    app.kubernetes.io/name: tankessqlmetric
+    app.kubernetes.io/instance: tankessqlmetric-sample
+    app.kubernetes.io/part-of: tankes-exporter
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: tankes-exporter
+  name: account-loggedin
+spec:
+  name: account_loggedin
+  query: select name, loggedin from accounts
+  valueField: loggedin
+  labelFields:
+    - name

@@ -1,0 +1,15 @@
+apiVersion: core.tankes.story/v1alpha1
+kind: TankesRedisMetric
+metadata:
+  labels:
+    app.kubernetes.io/name: tankesredismetric
+    app.kubernetes.io/instance: tankesredismetric-sample
+    app.kubernetes.io/part-of: tankes-exporter
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: tankes-exporter
+  name: tankesredismetric-sample
+spec:
+  name: accumulated_exp
+  regex: (.+)_accumulated_exp
+  labelMatchingGroups:
+    - name

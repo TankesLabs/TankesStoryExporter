@@ -1,0 +1,27 @@
+# permissions for end users to view tankesredismetrics.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: tankesredismetric-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: tankes-exporter
+    app.kubernetes.io/part-of: tankes-exporter
+    app.kubernetes.io/managed-by: kustomize
+  name: tankesredismetric-viewer-role
+rules:
+- apiGroups:
+  - core.tankes.story
+  resources:
+  - tankesredismetrics
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - core.tankes.story
+  resources:
+  - tankesredismetrics/status
+  verbs:
+  - get

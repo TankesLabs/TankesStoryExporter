@@ -1,0 +1,28 @@
+domain: tankes.story
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: tankes-exporter
+repo: github.com/omer-dayan/tankes-exporter
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: tankes.story
+  group: core
+  kind: TankesSqlMetric
+  path: github.com/omer-dayan/tankes-exporter/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: tankes.story
+  group: core
+  kind: TankesRedisMetric
+  path: github.com/omer-dayan/tankes-exporter/api/v1alpha1
+  version: v1alpha1
+version: "3"
